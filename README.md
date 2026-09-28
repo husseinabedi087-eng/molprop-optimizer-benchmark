@@ -58,9 +58,17 @@ Runtimes measured on an Intel i7-10750H (6 cores / 12 threads, 16 GB RAM) with 1
 | 9 | Final statistics → `analysis/final/` ¹ | `python analysis/final/final_stats.py` | ~30 s |
 | 10 | Figures → `analysis/figures/out/` ¹ | `python analysis/figures/make_figures.py` | ~30 s |
 
-¹ Needs the per-call logs (`results/xgb_mh/*/calls/*.jsonl`), which are not in this repository because of
-their size. Either regenerate them with steps 5–7 or download the release asset `xgb_mh_call_logs.zip`
-(Zenodo DOI: *to be added*) and unzip it into the repository root.
+¹ Needs the per-call logs (`results/xgb_mh/*/calls/*.jsonl`). They are included as a compressed archive,
+`data/xgb_mh_call_logs.zip` (33.4 MB; 2,440 logs, 160 MB unpacked; SHA-256 in `data/xgb_mh_call_logs.zip.sha256`).
+Unzip it into the repository root to restore `results/xgb_mh/*/calls/` (it also writes `MANIFEST_call_logs.csv`
+with the SHA-256 of every log):
+
+```bash
+sha256sum -c data/xgb_mh_call_logs.zip.sha256   # run inside data/, or check the hash manually
+unzip data/xgb_mh_call_logs.zip
+```
+
+Alternatively, regenerate them with steps 5–7.
 
 The runs (steps 5–7) are resumable: stop them at any time and rerun the same command; finished runs are
 skipped and partial runs are redone. Each run folder records the SHA-256 of the result-determining code in
@@ -89,6 +97,7 @@ xgb_mh/                       study code: data + features, shared decode(), budg
   tests/                      unit tests
   full_run.py                 resumable parallel runner          smoke.py, sanity_*.py  checks
 run_xgb_mh_*.ps1              launchers for steps 5-7
+data/xgb_mh_call_logs.zip     per-call logs of every run (+ .sha256); unzip into the repo root
 results/xgb_mh/
   full/  full_ref/  mirror/   test_summary.csv (one row per run), run_metadata.json, full_run.log,
                               runs/*.json (per-run summaries), baseline/*.json
@@ -121,9 +130,11 @@ sources when using them.
   title  = {<TITLE>},
   author = {<AUTHORS>},
   year   = {2026},
-  note   = {Code and results: https://github.com/<USER>/molprop-optimizer-benchmark; call logs: Zenodo DOI <DOI>}
+  note   = {Code, results and call logs: https://github.com/<USER>/molprop-optimizer-benchmark}
 }
 ```
+
+A Zenodo DOI for the whole repository will be added at the first release.
 
 ## License
 

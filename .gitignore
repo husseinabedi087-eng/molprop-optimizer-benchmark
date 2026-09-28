@@ -9,11 +9,14 @@ venv/
 *.tiff
 release_assets/
 
-# Downloaded raw data (MoleculeNet via PyG) and derived feature matrices (rebuilt by xgb_mh.prepare)
-data/
+# Downloaded raw data (MoleculeNet via PyG) and derived feature matrices (rebuilt by xgb_mh.prepare),
+# except the per-call log archive, which is tracked
+data/*
+!data/xgb_mh_call_logs.zip
+!data/xgb_mh_call_logs.zip.sha256
 results/xgb_mh/features/*.npz
 
-# Per-call logs (published separately as a release asset, see README)
+# Unpacked per-call logs (tracked as data/xgb_mh_call_logs.zip instead, see README)
 results/xgb_mh/*/calls/
 results/xgb_mh/smoke/runs/
 results/xgb_mh/resume_test/
