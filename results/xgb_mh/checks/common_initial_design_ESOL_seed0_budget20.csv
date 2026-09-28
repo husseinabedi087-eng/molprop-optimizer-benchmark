@@ -1,0 +1,11 @@
+experiment,optimizer,calls_1_10_x_identical,calls_1_10_fitness_identical,call_11_x_differs_from_random,best_of_first_10,best_of_20,metadata
+A,random,True,True,True,0.7488,0.7488,"common initial design (10 points): first draw of default_rng(seed).random((10, d))"
+A,tpe,True,True,True,0.7488,0.7488,"common initial design (10 points): first draw of default_rng(seed).random((10, d))"
+A,gwo,True,True,True,0.7488,0.7488,"common initial design (10 points): first draw of default_rng(seed).random((10, d))"
+A,woa,True,True,True,0.7488,0.7488,"common initial design (10 points): first draw of default_rng(seed).random((10, d))"
+A,pso,True,True,True,0.7488,0.7381,"common initial design (10 points): first draw of default_rng(seed).random((10, d))"
+B,random,True,True,True,0.7653,0.7653,"common initial design (10 points): first draw of default_rng(seed).random((10, d))"
+B,tpe,True,True,True,0.7653,0.7653,"common initial design (10 points): first draw of default_rng(seed).random((10, d))"
+B,gwo,True,True,True,0.7653,0.7653,"common initial design (10 points): first draw of default_rng(seed).random((10, d))"
+B,woa,True,True,True,0.7653,0.7653,"common initial design (10 points): first draw of default_rng(seed).random((10, d))"
+B,pso,True,True,True,0.7653,0.7653,"common initial design (10 points): first draw of default_rng(seed).random((10, d))"

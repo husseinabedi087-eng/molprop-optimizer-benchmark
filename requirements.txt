@@ -1,0 +1,15 @@
+# Python 3.12 (study run on 3.12.14, Windows 11, CPU only).
+# torch / torch-geometric are needed only to download and read the MoleculeNet datasets (xgb_mh.prepare).
+numpy==2.5.3
+pandas==3.0.1
+scipy==1.18.1
+scikit-learn==1.9.1
+xgboost==3.4.1
+optuna==5.0.0
+rdkit==2026.3.6
+torch==2.14.0
+torch-geometric==2.8.0.post1
+joblib==1.6.0
+matplotlib==3.11.2
+pillow==12.3.0
+psutil==7.2.2

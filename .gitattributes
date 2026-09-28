@@ -1,0 +1,3 @@
+# Store every file byte-for-byte (no CRLF/LF conversion): recorded SHA-256 hashes
+# (run_metadata.json, prediction.sha256, final_stats.json) must stay valid on every OS.
+* -text

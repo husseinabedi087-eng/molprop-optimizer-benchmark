@@ -1,0 +1,13 @@
+{
+ "dataset": "BACE",
+ "optimizer": "default",
+ "best_val_raw_metric": 0.14056742815033152,
+ "n_selected": 193,
+ "n_features_total": 193,
+ "test_roc_auc": 0.8144230769230769,
+ "test_pr_auc": 0.7094734084799892,
+ "refit_n_trees": 100,
+ "refit_time": 0.7613193000142928,
+ "search_time": 1.4558779000071809,
+ "peak_rss_mb": 190.765625
+}

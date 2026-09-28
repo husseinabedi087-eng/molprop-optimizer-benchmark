@@ -1,0 +1,13 @@
+{
+ "dataset": "BBBP",
+ "optimizer": "default",
+ "best_val_raw_metric": 0.0755760368663595,
+ "n_selected": 210,
+ "n_features_total": 210,
+ "test_roc_auc": 0.9151568161939273,
+ "test_pr_auc": 0.9620154284915242,
+ "refit_n_trees": 100,
+ "refit_time": 0.7891846999991685,
+ "search_time": 1.6083762999915052,
+ "peak_rss_mb": 190.765625
+}

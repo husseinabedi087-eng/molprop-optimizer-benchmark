@@ -1,0 +1,87 @@
+{
+  "static_check": {
+    "SearchData_fields": [
+      "dataset",
+      "task",
+      "X_train",
+      "y_train",
+      "X_val",
+      "y_val"
+    ],
+    "make_fitness_params": [
+      "data",
+      "experiment",
+      "seed"
+    ]
+  },
+  "poisoned_test_replay": [
+    {
+      "run": "ESOL_B_gwo_s0",
+      "trajectory_identical_with_poisoned_test": true,
+      "test_step": "computed (garbage)"
+    },
+    {
+      "run": "ESOL_A_tpe_s1",
+      "trajectory_identical_with_poisoned_test": true,
+      "test_step": "computed (garbage)"
+    },
+    {
+      "run": "BBBP_B_woa_s0",
+      "trajectory_identical_with_poisoned_test": true,
+      "test_step": "computed (garbage)"
+    },
+    {
+      "run": "BBBP_A_pso_s1",
+      "trajectory_identical_with_poisoned_test": true,
+      "test_step": "computed (garbage)"
+    },
+    {
+      "run": "BBBP_B_random_s0",
+      "trajectory_identical_with_poisoned_test": true,
+      "test_step": "computed (garbage)"
+    }
+  ],
+  "refit_trees_equal_best_iteration_plus_1": true,
+  "baseline": [
+    {
+      "dataset": "ESOL",
+      "optimizer": "default",
+      "best_val_raw_metric": 0.8605224379566973,
+      "n_selected": 188,
+      "n_features_total": 188,
+      "test_rmse": 0.8888489094425559,
+      "test_mae": 0.6579149563228135,
+      "test_r2": 0.7932225710717846,
+      "refit_n_trees": 100,
+      "refit_time": 1.1563540000061039,
+      "search_time": 2.255298300005961,
+      "peak_rss_mb": 190.7109375,
+      "deterministic": true,
+      "test_roc_auc": NaN,
+      "test_pr_auc": NaN
+    },
+    {
+      "dataset": "BBBP",
+      "optimizer": "default",
+      "best_val_raw_metric": 0.0755760368663595,
+      "n_selected": 210,
+      "n_features_total": 210,
+      "test_rmse": NaN,
+      "test_mae": NaN,
+      "test_r2": NaN,
+      "refit_n_trees": 100,
+      "refit_time": 0.9069261999975424,
+      "search_time": 1.7285243999940576,
+      "peak_rss_mb": 193.36328125,
+      "deterministic": true,
+      "test_roc_auc": 0.9151568161939273,
+      "test_pr_auc": 0.9620154284915242
+    }
+  ],
+  "parallel_wall_s": 558.4658640999987,
+  "total_wall_s": 666.5684655000077,
+  "peak_rss_mb_per_worker": {
+    "max": 516.703125,
+    "median": 291.98828125
+  }
+}

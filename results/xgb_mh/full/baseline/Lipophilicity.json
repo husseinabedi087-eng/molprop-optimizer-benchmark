@@ -1,0 +1,14 @@
+{
+ "dataset": "Lipophilicity",
+ "optimizer": "default",
+ "best_val_raw_metric": 0.7369110374281476,
+ "n_selected": 207,
+ "n_features_total": 207,
+ "test_rmse": 0.7600322212025565,
+ "test_mae": 0.5810782860446211,
+ "test_r2": 0.6006716622923919,
+ "refit_n_trees": 100,
+ "refit_time": 2.2065592000144534,
+ "search_time": 4.155031299975235,
+ "peak_rss_mb": 210.47265625
+}

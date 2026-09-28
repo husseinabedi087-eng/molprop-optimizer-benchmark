@@ -1,0 +1,290 @@
+{
+  "_environment": {
+    "rdkit": "2026.03.6",
+    "numpy": "2.5.3",
+    "python": "3.12.14"
+  },
+  "ESOL": {
+    "dataset": "ESOL",
+    "task": "regression",
+    "source": {
+      "loader": "torch_geometric.datasets.MoleculeNet",
+      "pyg_name": "ESOL",
+      "raw_files": [
+        {
+          "path": ".\\data\\ESOL\\esol\\raw\\delaney-processed.csv",
+          "sha256": "8c06a76f0c6487d29ab0f903e6a7a7139f189ab3c1178f159c8be8964602f189"
+        }
+      ],
+      "n_items": 1128,
+      "n_raw_rows": 1128
+    },
+    "split": {
+      "split_seed": 42,
+      "sizes": {
+        "train": 902,
+        "validation": 113,
+        "test": 113
+      },
+      "sha256": "1928c5836cc51f3d1f1ced7b60ade8044db970492761fc6325b735bc5b8b4a9a",
+      "legacy_file": ".\\priority_primary_20260924\\primary_ESOL\\split_indices.json",
+      "matches_legacy": true
+    },
+    "n_raw_rows": 1128,
+    "n_molecules_pyg": 1128,
+    "n_dropped": 0,
+    "dropped_by_reason": {},
+    "final_split_sizes": {
+      "train": 902,
+      "validation": 113,
+      "test": 113
+    },
+    "n_descriptors_total": 217,
+    "n_features_kept": 188,
+    "n_dropped_constant": 29,
+    "n_dropped_nan_gt_0.2": 0,
+    "n_dropped_both": 0,
+    "n_descriptors_with_train_conversions": 0,
+    "train_nan_fraction_kept_features": 0.0,
+    "X_shape": [
+      1128,
+      188
+    ],
+    "target_mean_sd": {
+      "train": [
+        -2.871494454350281,
+        2.080370929090049
+      ],
+      "validation": [
+        -3.909814155734746,
+        2.0376841789797466
+      ],
+      "test": [
+        -3.6160885099552376,
+        1.9546831913221492
+      ]
+    }
+  },
+  "FreeSolv": {
+    "dataset": "FreeSolv",
+    "task": "regression",
+    "source": {
+      "loader": "torch_geometric.datasets.MoleculeNet",
+      "pyg_name": "FreeSolv",
+      "raw_files": [
+        {
+          "path": ".\\data\\FreeSolv\\freesolv\\raw\\SAMPL.csv",
+          "sha256": "ab5895d914ee87cb563bd7b9611e869527bba45bec6b014d34dc495a0f9dcb72"
+        }
+      ],
+      "n_items": 642,
+      "n_raw_rows": 642
+    },
+    "split": {
+      "split_seed": 42,
+      "sizes": {
+        "train": 513,
+        "validation": 64,
+        "test": 65
+      },
+      "sha256": "9cde8332eefa1774f80f7542396d1f4130d84c88a42ba191502f03aac86626db"
+    },
+    "n_raw_rows": 642,
+    "n_molecules_pyg": 642,
+    "n_dropped": 0,
+    "dropped_by_reason": {},
+    "final_split_sizes": {
+      "train": 513,
+      "validation": 64,
+      "test": 65
+    },
+    "n_descriptors_total": 217,
+    "n_features_kept": 171,
+    "n_dropped_constant": 46,
+    "n_dropped_nan_gt_0.2": 0,
+    "n_dropped_both": 0,
+    "n_descriptors_with_train_conversions": 0,
+    "train_nan_fraction_kept_features": 0.0,
+    "X_shape": [
+      642,
+      171
+    ],
+    "target_mean_sd": {
+      "train": [
+        -3.2820078000339152,
+        3.293074862630505
+      ],
+      "validation": [
+        -5.456249977229163,
+        5.254110103819028
+      ],
+      "test": [
+        -6.2870769234804005,
+        4.715428242850139
+      ]
+    }
+  },
+  "Lipophilicity": {
+    "dataset": "Lipophilicity",
+    "task": "regression",
+    "source": {
+      "loader": "torch_geometric.datasets.MoleculeNet",
+      "pyg_name": "Lipo",
+      "raw_files": [
+        {
+          "path": ".\\data\\Lipophilicity\\lipo\\raw\\Lipophilicity.csv",
+          "sha256": "aed41590cb30609d51d8e08ad3ff06495a76e80e211358801f596b10da69bacd"
+        }
+      ],
+      "n_items": 4200,
+      "n_raw_rows": 4200
+    },
+    "split": {
+      "split_seed": 42,
+      "sizes": {
+        "train": 3360,
+        "validation": 420,
+        "test": 420
+      },
+      "sha256": "15019f88949b1d865e92feffeba141e8d47573422d533f7efddb041da78dfb0a"
+    },
+    "n_raw_rows": 4200,
+    "n_molecules_pyg": 4200,
+    "n_dropped": 0,
+    "dropped_by_reason": {},
+    "final_split_sizes": {
+      "train": 3360,
+      "validation": 420,
+      "test": 420
+    },
+    "n_descriptors_total": 217,
+    "n_features_kept": 207,
+    "n_dropped_constant": 10,
+    "n_dropped_nan_gt_0.2": 0,
+    "n_dropped_both": 0,
+    "n_descriptors_with_train_conversions": 0,
+    "train_nan_fraction_kept_features": 1.725327812284334e-05,
+    "X_shape": [
+      4200,
+      207
+    ],
+    "target_mean_sd": {
+      "train": [
+        2.167360119080348,
+        1.2047290107195412
+      ],
+      "validation": [
+        2.266428574941875,
+        1.1818494839209266
+      ],
+      "test": [
+        2.2580476202381154,
+        1.2027266639956864
+      ]
+    }
+  },
+  "BBBP": {
+    "dataset": "BBBP",
+    "task": "classification",
+    "source": {
+      "loader": "torch_geometric.datasets.MoleculeNet",
+      "pyg_name": "BBBP",
+      "raw_files": [
+        {
+          "path": ".\\data\\BBBP\\bbbp\\raw\\BBBP.csv",
+          "sha256": "d07a38487aeac5cee5508413e468043ef3097451d2a112701c2d60be9ec6b662"
+        }
+      ],
+      "n_items": 2039,
+      "n_raw_rows": 2050
+    },
+    "split": {
+      "split_seed": 42,
+      "sizes": {
+        "train": 1631,
+        "validation": 204,
+        "test": 204
+      },
+      "sha256": "032ebe2f0fdcf5f60f6bc48a9858659502b6445f2dbd52764e878ed506e9ea31",
+      "legacy_file": ".\\priority_primary_20260924\\primary_BBBP\\split_indices.json",
+      "matches_legacy": true
+    },
+    "n_raw_rows": 2050,
+    "n_molecules_pyg": 2039,
+    "n_dropped": 11,
+    "dropped_by_reason": {
+      "rdkit_parse_failed": 11
+    },
+    "final_split_sizes": {
+      "train": 1631,
+      "validation": 204,
+      "test": 204
+    },
+    "n_descriptors_total": 217,
+    "n_features_kept": 210,
+    "n_dropped_constant": 7,
+    "n_dropped_nan_gt_0.2": 0,
+    "n_dropped_both": 0,
+    "n_descriptors_with_train_conversions": 1,
+    "train_nan_fraction_kept_features": 0.0003795509620157076,
+    "X_shape": [
+      2039,
+      210
+    ],
+    "positive_rate": {
+      "train": 0.768853464132434,
+      "validation": 0.7598039215686274,
+      "test": 0.7401960784313726
+    }
+  },
+  "BACE": {
+    "dataset": "BACE",
+    "task": "classification",
+    "source": {
+      "loader": "torch_geometric.datasets.MoleculeNet",
+      "pyg_name": "BACE",
+      "raw_files": [
+        {
+          "path": ".\\data\\BACE\\bace\\raw\\bace.csv",
+          "sha256": "f3fb9ce90bada3e2bd6148b0df13f8f8145a357bf87df0dd5b391ede974fc737"
+        }
+      ],
+      "n_items": 1513,
+      "n_raw_rows": 1513
+    },
+    "split": {
+      "split_seed": 42,
+      "sizes": {
+        "train": 1210,
+        "validation": 151,
+        "test": 152
+      },
+      "sha256": "2e4bd2fcdfbd462858dca75b9aebe03f34c2204b37dabee48cb12ee8f8d7dd6c"
+    },
+    "n_raw_rows": 1513,
+    "n_molecules_pyg": 1513,
+    "n_dropped": 0,
+    "dropped_by_reason": {},
+    "final_split_sizes": {
+      "train": 1210,
+      "validation": 151,
+      "test": 152
+    },
+    "n_descriptors_total": 217,
+    "n_features_kept": 193,
+    "n_dropped_constant": 24,
+    "n_dropped_nan_gt_0.2": 0,
+    "n_dropped_both": 0,
+    "n_descriptors_with_train_conversions": 0,
+    "train_nan_fraction_kept_features": 0.0,
+    "X_shape": [
+      1513,
+      193
+    ],
+    "positive_rate": {
+      "train": 0.4793388429752066,
+      "validation": 0.39072847682119205,
+      "test": 0.34210526315789475
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+ "dataset": "ESOL",
+ "optimizer": "default",
+ "best_val_raw_metric": 0.8605224379566973,
+ "n_selected": 188,
+ "n_features_total": 188,
+ "test_rmse": 0.8888489094425559,
+ "test_mae": 0.6579149563228135,
+ "test_r2": 0.7932225710717846,
+ "refit_n_trees": 100,
+ "refit_time": 1.0296439999947324,
+ "search_time": 2.009224199980963,
+ "peak_rss_mb": 193.28125
+}

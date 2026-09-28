@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Temporary / large artefacts
+*.tmp
+*.tiff
+release_assets/
+
+# Downloaded raw data (MoleculeNet via PyG) and derived feature matrices (rebuilt by xgb_mh.prepare)
+data/
+results/xgb_mh/features/*.npz
+
+# Per-call logs (published separately as a release asset, see README)
+results/xgb_mh/*/calls/
+results/xgb_mh/smoke/runs/
+results/xgb_mh/resume_test/
+
+# Exploratory preview outputs, except the pre-registered mirror evaluation read by analysis/final/final_stats.py
+analysis_preview/output/*
+!analysis_preview/output/mirror_20260928_111045/

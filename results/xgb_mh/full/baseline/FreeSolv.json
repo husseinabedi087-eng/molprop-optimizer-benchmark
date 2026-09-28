@@ -1,0 +1,14 @@
+{
+ "dataset": "FreeSolv",
+ "optimizer": "default",
+ "best_val_raw_metric": 3.272302082867219,
+ "n_selected": 171,
+ "n_features_total": 171,
+ "test_rmse": 2.810794041033477,
+ "test_mae": 1.8626767871471552,
+ "test_r2": 0.6446831792065952,
+ "refit_n_trees": 100,
+ "refit_time": 0.6850965000048745,
+ "search_time": 1.3327882000012323,
+ "peak_rss_mb": 190.765625
+}

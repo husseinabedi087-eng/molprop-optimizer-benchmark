@@ -1,0 +1,90 @@
+{
+  "created_utc": "2026-09-26T07:09:23.168959+00:00",
+  "config": {
+    "datasets": [
+      "BBBP",
+      "FreeSolv",
+      "BACE",
+      "ESOL",
+      "Lipophilicity"
+    ],
+    "experiments": [
+      "A",
+      "B"
+    ],
+    "optimizers": [
+      "random",
+      "tpe",
+      "gwo",
+      "woa",
+      "pso"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "budget": 100,
+    "n_jobs": 10
+  },
+  "code_sha256": "4669997af4a67733867766d81e1951ccf6b363da31e0767f6918ef1161058faf",
+  "initial_design": "common initial design (10 points), shared by all five optimizers",
+  "packages": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "pandas": "3.0.1",
+    "xgboost": "3.4.1",
+    "optuna": "5.0.0",
+    "rdkit": "2026.03.6",
+    "scikit-learn": "1.9.1"
+  },
+  "hardware": {
+    "cpu": "Intel64 Family 6 Model 165 Stepping 2, GenuineIntel",
+    "logical_cpus": 12,
+    "physical_cores": 6,
+    "ram_gb": 15.8
+  },
+  "feature_files_sha256": {
+    "BBBP": "4bcb42b077a6e2b1db19fad3ad036cc227c4ec9a170f0d9fa80d5a0916a7a92f",
+    "FreeSolv": "31c5357f3476298fcefe6b8422878181aa6e9d9fd79a17236fa133147e75822d",
+    "BACE": "fbc1eef51b854bee38e4917d75e23992f7f062afe062e58018754bef66002ed9",
+    "ESOL": "01e70848719e0f8cab3b539b0426bae576eaad0894e888d42a1cb22c2969f66d",
+    "Lipophilicity": "9608473f13da700c3e98616897df8f75d01385326a549b27b2ba4c002c0fef61"
+  },
+  "sessions": [
+    {
+      "start_utc": "2026-09-26T07:09:23.211990+00:00",
+      "elapsed_s": 73081.55512928963,
+      "last_update_utc": "2026-09-27T03:27:24.007356+00:00",
+      "end_utc": "2026-09-27T03:27:24.025058+00:00",
+      "status": "complete"
+    }
+  ]
+}
