@@ -1,0 +1,14 @@
+dataset,pair,type,inchikey,smiles_a,smiles_b,y_a,y_b,abs_diff
+BBBP,train-valid,exact (full InChIKey),QKDDJDBFONZGBW-UHFFFAOYSA-N,c1nc(C2CCN(CC2)C(NC2CCCCC2)=S)c[nH]1,S=C(NC1CCCCC1)N2CCC(CC2)c3[nH]cnc3,1.0,1.0,0.0
+BACE,train-valid,stereo-only (same block 1),MRYFMHAPTQCQLE-SFHVURJKSA-N | MRYFMHAPTQCQLE-GOSISDBHSA-O,Clc1ccc(nc1)C(=O)Nc1cc(ccc1)[C@@]1(N=C(N)CN(C)C1=O)C,Clc1ccc(nc1)C(=O)Nc1cc(ccc1)[C@]1([NH+]=C(N)CN(C)C1=O)C,0.0,0.0,0.0
+BACE,train-valid,stereo-only (same block 1),SSQLUPVACAMCTQ-UHFFFAOYSA-N | SSQLUPVACAMCTQ-FQEVSTJZSA-O,Clc1cc2CC(N=C(NC(Cc3ccccc3)C=3NC(=O)C(=CN=3)C#N)c2cc1)(C)C,Clc1cc2CC([NH+]=C(N[C@@H](Cc3ccccc3)C=3NC(=O)C(=CN=3)C#N)c2cc1)(C)C,0.0,0.0,0.0
+BACE,train-test,stereo-only (same block 1),ASNJXTHXWLJRAC-UHFFFAOYSA-M | ASNJXTHXWLJRAC-SFHVURJKSA-N,Clc1cc2CC(N=C(NC(Cc3cscc3-c3cn[nH]c3)C(=O)[O-])c2cc1)(C)C,Clc1cc2CC([NH+]=C(N[C@@H](Cc3cscc3-c3cn[nH]c3)C(=O)[O-])c2cc1)(C)C,0.0,0.0,0.0
+BACE,train-test,stereo-only (same block 1),DQYKHJYAOKSEPD-UHFFFAOYSA-N | DQYKHJYAOKSEPD-QFIPXVFZSA-O,Clc1cc2CC(N=C(NC(Cc3ccccc3)C=3NC(=O)c4c(N=3)ccnc4)c2cc1)(C)C,Clc1cc2CC([NH+]=C(N[C@@H](Cc3ccccc3)C=3NC(=O)c4c(N=3)ccnc4)c2cc1)(C)C,0.0,0.0,0.0
+BACE,train-test,stereo-only (same block 1),MELPDVINWCDKRF-UHFFFAOYSA-N | MELPDVINWCDKRF-JXBWDGJFSA-O,Clc1ccc(nc1)C(=O)Nc1cc(C2(N=C(N)C3C(C2)C3)C)c(F)cc1,Clc1ccc(nc1)C(=O)Nc1cc([C@]2([NH+]=C(N)[C@@H]3[C@H](C2)C3)C)c(F)cc1,1.0,1.0,0.0
+BACE,train-test,stereo-only (same block 1),MLDNPVIFXVSEGX-OAQYLSRUSA-O | MLDNPVIFXVSEGX-UHFFFAOYSA-N,O(C)c1ccc(cc1)[C@@]1([NH+]=C(N)CC1)c1cc(ccc1)-c1cncnc1,O(C)c1ccc(cc1)C1(N=C(N)CC1)c1cc(ccc1)-c1cncnc1,0.0,0.0,0.0
+BACE,train-test,stereo-only (same block 1),PTYGSLKLIDGJBA-UHFFFAOYSA-O | PTYGSLKLIDGJBA-UHFFFAOYSA-N,Clc1cc(cc(Cl)c1NC(=O)C)CNC(=[NH2+])NC(=O)Cn1c2c(cccc2)cc1,Clc1cc(cc(Cl)c1NC(=O)C)C\N=C(\NC(=O)Cn1c2c(cccc2)cc1)/N,0.0,0.0,0.0
+BACE,train-test,stereo-only (same block 1),QNSBKNRQYCQXMO-UHFFFAOYSA-O | QNSBKNRQYCQXMO-UHFFFAOYSA-N,Clc1cc(cc(Cl)c1NC(=O)C)CNC(=[NH2+])NC(=O)Cn1c2cc(ccc2cc1)C#N,Clc1cc(cc(Cl)c1NC(=O)C)CNC(NC(=O)Cn1c2cc(ccc2cc1)C#N)=N,1.0,1.0,0.0
+BACE,train-test,stereo-only (same block 1),YBXYDJCRBQOXMI-UHFFFAOYSA-N | YBXYDJCRBQOXMI-ZOWXZIJZSA-N,O=C1N(C)C(=NC(C1)(C)C1CC1c1ccccc1)N,O=C1N(C)C(N[C@](C1)(C)[C@@H]1C[C@H]1c1ccccc1)=N,0.0,0.0,0.0
+BACE,train-test,stereo-only (same block 1),YBXYDJCRBQOXMI-ZVORSSOTSA-N | YBXYDJCRBQOXMI-ZOWXZIJZSA-N,O=C1N(C)C(=NC(C1)(C)[C@H]1C[C@@H]1c1ccccc1)N,O=C1N(C)C(N[C@](C1)(C)[C@@H]1C[C@H]1c1ccccc1)=N,0.0,0.0,0.0
+BACE,valid-test,stereo-only (same block 1),XBWQSEBJKSPBBV-UHFFFAOYSA-N | XBWQSEBJKSPBBV-FYYLOGMGSA-O,O(C)C1CC(N=C1N)(c1cc(ccc1)-c1cccnc1)c1ccc(OC)cc1,O(C)c1ccc(cc1)[C@@]1([NH+]=C(N)[C@H](OC)C1)c1cc(ccc1)-c1cccnc1,0.0,0.0,0.0
+BACE,valid-test,stereo-only (same block 1),YQFNSFOVYAQJAF-UHFFFAOYSA-N | YQFNSFOVYAQJAF-HSZRJFAPSA-O,s1c2c(nc1C)C(=NC2(c1cc(ccc1)-c1cncnc1)c1ccc(OC)cc1)N,s1c2c(nc1C)C(=[NH+][C@@]2(c1cc(ccc1)-c1cncnc1)c1ccc(OC)cc1)N,0.0,0.0,0.0

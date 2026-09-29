@@ -109,7 +109,11 @@ analysis_preview/             audit and preview scripts; output/mirror_20260928_
                               pre-registered mirror evaluation read by final_stats.py
 analysis/final/               final_stats.py, RESULTS.md, final_stats.json, one CSV per analysis,
   code_snapshot/              exact analysis code behind final_stats.json (hashes verified)
+  curation/                   duplicate / cross-split overlap check on the exact molecules and splits used
+                              (curation_check.py, curation_duplicates_detail.csv, curation_summary.md)
 analysis/figures/             figure pipeline (style, data, figures, checks); out/ = PDF + PNG + contact sheet
+analysis/si/                  Supporting Information: SI.pdf, build_si.py (SI.docx from analysis/final + figures),
+                              export_si.ps1 (Word: update captions / lists, export PDF)
 ```
 
 Naming: `gwo` / `woa` in `results/xgb_mh/full` are the **a0** variants (coefficient `a` reaches 0 on the last
@@ -127,10 +131,10 @@ sources when using them.
 
 ```
 @misc{molprop_optimizer_benchmark,
-  title  = {<TITLE>},
-  author = {<AUTHORS>},
+  title  = {Validation Noise, Not the Optimizer, Limits Metaheuristic Tuning in Molecular Property Prediction},
+  author = {Hussein Fadhil Abedi},
   year   = {2026},
-  note   = {Code, results and call logs: https://github.com/<USER>/molprop-optimizer-benchmark}
+  note   = {Code, results and call logs: https://github.com/husseinabedi087-eng/molprop-optimizer-benchmark}
 }
 ```
 
