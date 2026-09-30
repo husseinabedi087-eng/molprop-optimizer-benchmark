@@ -221,7 +221,7 @@ def fig4_validation_reliability(study: Study, fs: dict, out: Path) -> list[Path]
     return _finish(fig, study, "fig4_validation_reliability", out)
 
 
-def fig6_feature_selection(study: Study, fs: dict, pairs: pd.DataFrame, mtests: pd.DataFrame, out: Path) -> list[Path]:
+def fig5_feature_selection(study: Study, fs: dict, pairs: pd.DataFrame, mtests: pd.DataFrame, out: Path) -> list[Path]:
     """(a) selected fraction, (b) Nogueira stability, (c) mirrored-encoding check."""
     fsel = _records(fs, "feature_selection").set_index(["dataset", "method"])
     fig = plt.figure(figsize=(DOUBLE_COL, 7.6))
@@ -305,10 +305,10 @@ def fig6_feature_selection(study: Study, fs: dict, pairs: pd.DataFrame, mtests: 
             ax.set_yticklabels([])
     fig.text(0.99, 0.005, "c: lines = seeds (paired); bars = medians; paired Wilcoxon, Holm over 5 optimizers "
              "(pre-registered)", ha="right", va="bottom", fontsize=6.5, color=INK_MUTED)
-    return _finish(fig, study, "fig6_feature_selection", out)
+    return _finish(fig, study, "fig5_feature_selection", out)
 
 
-def fig5_headroom_exploratory(fs: dict, out: Path) -> list[Path]:
+def figS4_headroom_exploratory(fs: dict, out: Path) -> list[Path]:
     """EXPLORATORY: validation headroom (%) vs test gain (%) over the 10 dataset x experiment cells."""
     h = fs["headroom_EXPLORATORY"]
     cells = pd.DataFrame(h["cells"])
@@ -343,11 +343,11 @@ def fig5_headroom_exploratory(fs: dict, out: Path) -> list[Path]:
             fontsize=6.5, color=INK_MUTED)
     ax.yaxis.grid(True, **GRID)
     fig.subplots_adjust(left=0.19, right=0.97, top=0.97, bottom=0.2)
-    return save(fig, "fig5_headroom_EXPLORATORY", out)
+    return save(fig, "figS4_headroom_EXPLORATORY", out)
 
 
 # ========================================================================================== SUPPLEMENTARY
-def figS5_convergence(study: Study, curves: dict, fs: dict, out: Path) -> list[Path]:
+def figS6_convergence(study: Study, curves: dict, fs: dict, out: Path) -> list[Path]:
     """Median best-so-far validation fitness vs call index, IQR band (curves: raw call logs)."""
     vr = _records(fs, "validation_reliability").set_index(["dataset", "experiment", "method"])
     fig, axes = plt.subplots(len(DATASETS), 2, figsize=(DOUBLE_COL, 8.8), sharey="row", sharex=True)
@@ -390,7 +390,7 @@ def figS5_convergence(study: Study, curves: dict, fs: dict, out: Path) -> list[P
                columnspacing=1.0, handletextpad=0.4)
     fig.text(0.01, 0.5, "Median best-so-far validation fitness (IQR band)", rotation=90, va="center", ha="left")
     fig.subplots_adjust(left=0.10, right=0.98, top=0.91, bottom=0.05, hspace=0.42, wspace=0.08)
-    return save(fig, "figS5_convergence", out)
+    return save(fig, "figS6_convergence", out)
 
 
 def _draw_cd(ax, names: list[str], ranks: np.ndarray, cd: float, header: str) -> None:
@@ -535,7 +535,7 @@ def figS1_sphere(out: Path) -> list[Path]:
     return save(fig, "figS1_sphere", out)
 
 
-def figS4_sensitivity(study: Study, a0: pd.DataFrame, fs: dict, out: Path) -> list[Path]:
+def figS5_sensitivity(study: Study, a0: pd.DataFrame, fs: dict, out: Path) -> list[Path]:
     """a0 - ref paired differences (primary metric; > 0 = a0 better). Medians and Holm p from final_stats.json."""
     sens = _records(fs, "sensitivity_paired").set_index(["method", "dataset", "experiment"])
     fig, axes = plt.subplots(len(DATASETS), 2, figsize=(DOUBLE_COL, 6.6), sharey=True)
@@ -571,4 +571,4 @@ def figS4_sensitivity(study: Study, a0: pd.DataFrame, fs: dict, out: Path) -> li
     fig.text(0.99, 0.005, "dots = seeds (paired); bar = median paired difference; Holm over the 10 dataset x "
              "experiment cells per method", ha="right", va="bottom", fontsize=6.5, color=INK_MUTED)
     fig.subplots_adjust(left=0.12, right=0.90, top=0.92, bottom=0.06, hspace=0.55, wspace=0.40)
-    return save(fig, "figS4_sensitivity", out)
+    return save(fig, "figS5_sensitivity", out)

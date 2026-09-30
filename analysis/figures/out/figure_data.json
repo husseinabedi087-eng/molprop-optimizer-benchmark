@@ -1,18 +1,18 @@
 {
-  "generated": "2026-09-28T20:04:31",
+  "generated": "2026-10-01T01:13:36",
   "draft": false,
   "sources": {
     "statistics": "analysis/final/final_stats.json (analysis code sha256 264415706d217c2910d722afafbc4f3eb8b5c7c6832cd2da4b507323bac15cba)",
-    "mirror tests (fig6c)": "analysis/final/5_mirror_prespecified_tests.csv (= RESULTS.md section 5)",
+    "mirror tests (fig5c)": "analysis/final/5_mirror_prespecified_tests.csv (= RESULTS.md section 5)",
     "sphere (figS1_sphere)": "results/xgb_mh/sanity/sphere_tests.csv, sphere_corner_bias.csv",
-    "raw distributions": "results/xgb_mh/full (Random, TPE, PSO, Default), full_ref (GWO, WOA), mirror, full gwo/woa (a0, figS4_sensitivity only); call logs for figS5_convergence"
+    "raw distributions": "results/xgb_mh/full (Random, TPE, PSO, Default), full_ref (GWO, WOA), mirror, full gwo/woa (a0, figS5_sensitivity only); call logs for figS6_convergence"
   },
   "consistency_checks": {
     "fig2/fig3: raw test values reproduce tuning_vs_default medians and default values": true,
     "fig4: raw val/test values reproduce validation_reliability medians": true,
-    "fig6a: raw fractions reproduce feature_selection medians": true,
-    "fig6c: paired raw fractions reproduce the pre-registered mirror medians": true,
-    "figS4_sensitivity: raw a0/ref values reproduce sensitivity_paired medians": true,
+    "fig5a: raw fractions reproduce feature_selection medians": true,
+    "fig5c: paired raw fractions reproduce the pre-registered mirror medians": true,
+    "figS5_sensitivity: raw a0/ref values reproduce sensitivity_paired medians": true,
     "no DRAFT variants: GWO/WOA are gwo_ref/woa_ref": true,
     "print size: every figure is 3.5 in or 7.2 in wide": true,
     "text: body 8 pt, ticks/legend 7 pt, annotations >= 6.5 pt, panel letters 9 pt (none larger)": true
@@ -46,16 +46,7 @@
         9.0
       ]
     },
-    "fig5_headroom_EXPLORATORY": {
-      "width_in": 3.5,
-      "height_in": 3.3,
-      "font_sizes_pt": [
-        6.5,
-        7.0,
-        8.0
-      ]
-    },
-    "fig6_feature_selection": {
+    "fig5_feature_selection": {
       "width_in": 7.2,
       "height_in": 7.6,
       "font_sizes_pt": [
@@ -93,7 +84,16 @@
         9.0
       ]
     },
-    "figS4_sensitivity": {
+    "figS4_headroom_EXPLORATORY": {
+      "width_in": 3.5,
+      "height_in": 3.3,
+      "font_sizes_pt": [
+        6.5,
+        7.0,
+        8.0
+      ]
+    },
+    "figS5_sensitivity": {
       "width_in": 7.2,
       "height_in": 6.6,
       "font_sizes_pt": [
@@ -103,7 +103,7 @@
         9.0
       ]
     },
-    "figS5_convergence": {
+    "figS6_convergence": {
       "width_in": 7.2,
       "height_in": 8.8,
       "font_sizes_pt": [
@@ -130,15 +130,10 @@
       "fig4_validation_reliability.png",
       "fig4_validation_reliability.tiff"
     ],
-    "fig5_headroom_EXPLORATORY": [
-      "fig5_headroom_EXPLORATORY.pdf",
-      "fig5_headroom_EXPLORATORY.png",
-      "fig5_headroom_EXPLORATORY.tiff"
-    ],
-    "fig6_feature_selection": [
-      "fig6_feature_selection.pdf",
-      "fig6_feature_selection.png",
-      "fig6_feature_selection.tiff"
+    "fig5_feature_selection": [
+      "fig5_feature_selection.pdf",
+      "fig5_feature_selection.png",
+      "fig5_feature_selection.tiff"
     ],
     "figS1_sphere": [
       "figS1_sphere.pdf",
@@ -155,15 +150,20 @@
       "figS3_cd_optimizers.png",
       "figS3_cd_optimizers.tiff"
     ],
-    "figS4_sensitivity": [
-      "figS4_sensitivity.pdf",
-      "figS4_sensitivity.png",
-      "figS4_sensitivity.tiff"
+    "figS4_headroom_EXPLORATORY": [
+      "figS4_headroom_EXPLORATORY.pdf",
+      "figS4_headroom_EXPLORATORY.png",
+      "figS4_headroom_EXPLORATORY.tiff"
     ],
-    "figS5_convergence": [
-      "figS5_convergence.pdf",
-      "figS5_convergence.png",
-      "figS5_convergence.tiff"
+    "figS5_sensitivity": [
+      "figS5_sensitivity.pdf",
+      "figS5_sensitivity.png",
+      "figS5_sensitivity.tiff"
+    ],
+    "figS6_convergence": [
+      "figS6_convergence.pdf",
+      "figS6_convergence.png",
+      "figS6_convergence.tiff"
     ]
   },
   "palette_cvd_check": [

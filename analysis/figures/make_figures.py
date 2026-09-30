@@ -37,17 +37,17 @@ def verify_against_final_stats(study, fs, pairs, mtests, a0) -> dict:
         np.isclose(np.median(F._values(F._cell(study, r["dataset"], r["experiment"]), r["method"], "val_primary")),
                    r["median_val"], rtol=0, atol=JSON_TOL) for r in vr))
     fsel = fs["feature_selection"]
-    checks["fig6a: raw fractions reproduce feature_selection medians"] = bool(all(
+    checks["fig5a: raw fractions reproduce feature_selection medians"] = bool(all(
         np.isclose(np.median((lambda s: s.n_selected / s.n_features_total)(
             study.runs[(study.runs.dataset == r["dataset"]) & (study.runs.experiment == "B") & (study.runs.method == r["method"])])),
             r["fraction_median"], rtol=0, atol=JSON_TOL) for r in fsel))
     mt = mtests[mtests.outcome == "fraction"]
-    checks["fig6c: paired raw fractions reproduce the pre-registered mirror medians"] = bool(all(
+    checks["fig5c: paired raw fractions reproduce the pre-registered mirror medians"] = bool(all(
         np.isclose(np.median(pairs[(pairs.dataset == r.dataset) & (pairs.method == r.method)].frac_normal), r.median_normal,
                    atol=JSON_TOL) and
         np.isclose(np.median(pairs[(pairs.dataset == r.dataset) & (pairs.method == r.method)].frac_mirrored),
                    r.median_mirrored, atol=JSON_TOL) for r in mt.itertuples()))
-    checks["figS4_sensitivity: raw a0/ref values reproduce sensitivity_paired medians"] = bool(all(
+    checks["figS5_sensitivity: raw a0/ref values reproduce sensitivity_paired medians"] = bool(all(
         np.isclose(np.median(a0[(a0.dataset == r["dataset"]) & (a0.experiment == r["experiment"]) & (a0.method == r["method"])]
                              .test_primary), r["median_a0"], atol=JSON_TOL) and
         np.isclose(np.median(F._values(F._cell(study, r["dataset"], r["experiment"]), r["method"])), r["median_ref"], atol=JSON_TOL)
@@ -69,13 +69,13 @@ def main() -> None:
         "fig2_test_distributions": F.fig2_test_distributions(study, fs, OUT),
         "fig3_forest_vs_default": F.fig3_forest_vs_default(study, fs, OUT),
         "fig4_validation_reliability": F.fig4_validation_reliability(study, fs, OUT),
-        "fig5_headroom_EXPLORATORY": F.fig5_headroom_exploratory(fs, OUT),
-        "fig6_feature_selection": F.fig6_feature_selection(study, fs, pairs, mtests, OUT),
+        "fig5_feature_selection": F.fig5_feature_selection(study, fs, pairs, mtests, OUT),
         "figS1_sphere": F.figS1_sphere(OUT),
         "figS2_a12_heatmap": F.figS2_a12_heatmap(fs, OUT),
         "figS3_cd_optimizers": F.figS3_cd_optimizers(fs, OUT),
-        "figS4_sensitivity": F.figS4_sensitivity(study, a0, fs, OUT),
-        "figS5_convergence": F.figS5_convergence(study, curves, fs, OUT),
+        "figS4_headroom_EXPLORATORY": F.figS4_headroom_exploratory(fs, OUT),
+        "figS5_sensitivity": F.figS5_sensitivity(study, a0, fs, OUT),
+        "figS6_convergence": F.figS6_convergence(study, curves, fs, OUT),
     }  # manuscript order (also the contact-sheet order)
     # Print-size text audit: figures are saved at their print width, so these are the printed point sizes.
     widths_ok = all(a["width_in"] in (style.SINGLE_COL, style.DOUBLE_COL) for a in style.TEXT_AUDIT.values())
@@ -89,10 +89,10 @@ def main() -> None:
     sources = {
         "statistics": "analysis/final/final_stats.json (analysis code sha256 "
                       f"{fs['provenance']['analysis_code_sha256']})",
-        "mirror tests (fig6c)": "analysis/final/5_mirror_prespecified_tests.csv (= RESULTS.md section 5)",
+        "mirror tests (fig5c)": "analysis/final/5_mirror_prespecified_tests.csv (= RESULTS.md section 5)",
         "sphere (figS1_sphere)": "results/xgb_mh/sanity/sphere_tests.csv, sphere_corner_bias.csv",
         "raw distributions": "results/xgb_mh/full (Random, TPE, PSO, Default), full_ref (GWO, WOA), mirror, "
-                             "full gwo/woa (a0, figS4_sensitivity only); call logs for figS5_convergence",
+                             "full gwo/woa (a0, figS5_sensitivity only); call logs for figS6_convergence",
     }
     (OUT / "figure_data.json").write_text(json.dumps({
         "generated": datetime.now().isoformat(timespec="seconds"), "draft": study.draft, "sources": sources,

@@ -23,8 +23,8 @@ from docx.shared import Inches, Pt
 
 ROOT = Path(__file__).resolve().parents[2]
 FINAL, FIGS, OUT = ROOT / "analysis" / "final", ROOT / "analysis" / "figures" / "out", ROOT / "analysis" / "si"
-TITLE = ("Supporting Information for: Validation Noise, Not the Optimizer, Limits Metaheuristic Tuning in "
-         "Molecular Property Prediction")
+TITLE = ("Supporting Information for: Optimizer Choice Matters Little When Tuning XGBoost on Scaffold-Split "
+         "Molecular Benchmarks")
 AUTHOR = "Hussein Fadhil Abedi"
 DS = ["ESOL", "FreeSolv", "Lipophilicity", "BBBP", "BACE"]
 OPTS = ["Random", "TPE", "GWO", "WOA", "PSO"]
@@ -160,7 +160,7 @@ def order_key(df: pd.DataFrame, cols=("dataset", "experiment", "method")) -> pd.
 
 # ------------------------------------------------------------------------------------------------ content
 def check_convergence_claim() -> None:
-    """Assert the Figure S5 caption claim from the raw call logs: median best-so-far < default by call 10."""
+    """Assert the Figure S6 caption claim from the raw call logs: median best-so-far < default by call 10."""
     sys.path.insert(0, str(ROOT / "analysis" / "figures"))
     from data import load_curves, load_study  # read-only
     study = load_study()
@@ -199,14 +199,23 @@ FIGURES = [
      "no pair differs by more than the CD. (b) Experiment B: PSO 1.60, GWO 2.40, TPE 2.60, Random 3.80, WOA 4.60; "
      "Friedman p = 0.023; only PSO and WOA differ by more than the CD (3.00). With five datasets these tests have low "
      "power; the per-dataset analyses (Tables S2 and S3) are the primary evidence."),
-    ("figS4_sensitivity.png", "Sensitivity of GWO and WOA to the coefficient schedule: a0 versus reference-faithful variants.",
+    ("figS4_headroom_EXPLORATORY.png",
+     "Validation headroom versus test gain (exploratory, not pre-specified).",
+     "Exploratory analysis, not pre-specified. For each of the 10 dataset × experiment cells, the median best validation "
+     "score of the five optimizers relative to the default's validation score (x, %) against their median test "
+     "improvement over the default (y, %), both oriented so that positive values favour the optimizers; filled circles: "
+     "Experiment A, open squares: Experiment B; grey line: y = x; black line: y = 0. The optimizers always improve on "
+     "the default on validation (2.3–30.6%), but that translates into a test gain only for FreeSolv (+10.4% and +12.6%) "
+     "and Lipophilicity (+4.3% and +3.0%); ESOL improves by about 16% on validation yet loses 2.3–3.1% on test. "
+     "Spearman ρ = 0.41 (p = 0.24, n = 10 cells, no multiplicity correction). Values in Table S6."),
+    ("figS5_sensitivity.png", "Sensitivity of GWO and WOA to the coefficient schedule: a0 versus reference-faithful variants.",
      "Paired differences (a0 − reference) in the primary test metric for each of the 30 seeds, oriented so that positive "
      "values favour the a0 schedule; bars mark the median paired difference. Rows are datasets, columns are GWO and "
      "WOA, and each panel shows Experiments A and B. Holm-adjusted p-values (paired Wilcoxon test, Holm correction over "
      "the 10 dataset × experiment cells per method) are shown at right; none is significant (smallest Holm p = 0.417, "
      "GWO, ESOL, Experiment B). The a0 schedule reduces the median number of unique evaluations per run (GWO 91 versus "
-     "100; WOA 91.5–93 versus 96–97.5) but changes none of the 50 tuning-versus-default conclusions. Values in Table S7."),
-    ("figS5_convergence.png", "Convergence of the best-so-far validation fitness.",
+     "100; WOA 91.5–93 versus 96–97.5) but changes none of the 50 tuning-versus-default conclusions. Values in Table S9."),
+    ("figS6_convergence.png", "Convergence of the best-so-far validation fitness.",
      "Median (line) and interquartile range (band) over 30 seeds of the best-so-far validation fitness against the "
      "fitness-call index (1–100), per dataset (rows) and experiment (columns): RMSE for regression and 1 − ROC-AUC for "
      "classification; in Experiment B the fitness includes the feature-count penalty (0.01 × selected fraction). Dashed "
@@ -394,7 +403,13 @@ def build_tables(fs: dict) -> list[tuple]:
                    "Such pairs can cross the Bemis–Murcko scaffold split because scaffolds were computed from the SMILES "
                    "as written. Total: 1 exact cross-split duplicate (BBBP, train–val) and 11 variant groups (BACE); all "
                    "cross-split labels agree.", 7.5))
-    return tables
+    # SI order (final manuscript): curation, Friedman, pairwise, tuning vs default, val-test gap, headroom,
+    # feature selection, mirror, sensitivity, compute.
+    order = ["Data-curation", "Friedman", "Pairwise", "Tuning versus", "Validation–test", "Validation headroom",
+             "Selected-feature", "Mirrored-encoding", "Sensitivity analysis", "Compute cost"]
+    ranked = [next(t for t in tables if t[0].startswith(prefix)) for prefix in order]
+    assert len(ranked) == len(tables) == len(set(t[0] for t in ranked)), "table order does not cover every table"
+    return ranked
 
 
 def main() -> None:
@@ -436,7 +451,8 @@ def main() -> None:
         new_section(doc, landscape=False)
         with Image.open(FIGS / fname) as im:
             aspect = im.height / im.width
-        width = min(FIG_MAX_W, FIG_MAX_H / aspect)
+            native_w = im.width / 600  # figures are 600 dpi PNGs at their print size (3.5 or 7.2 in)
+        width = min(native_w, FIG_MAX_W, FIG_MAX_H / aspect)  # never enlarge a single-column figure
         p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         p.paragraph_format.keep_with_next = True
         p.add_run().add_picture(str(FIGS / fname), width=Inches(width))

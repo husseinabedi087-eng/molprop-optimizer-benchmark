@@ -131,7 +131,7 @@ sources when using them.
 
 ```
 @misc{molprop_optimizer_benchmark,
-  title  = {Validation Noise, Not the Optimizer, Limits Metaheuristic Tuning in Molecular Property Prediction},
+  title  = {Optimizer Choice Matters Little When Tuning XGBoost on Scaffold-Split Molecular Benchmarks},
   author = {Hussein Fadhil Abedi},
   year   = {2026},
   note   = {Code, results and call logs: https://github.com/husseinabedi087-eng/molprop-optimizer-benchmark}
