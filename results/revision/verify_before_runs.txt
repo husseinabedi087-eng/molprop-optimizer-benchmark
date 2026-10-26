@@ -1,0 +1,13 @@
+Exact-reproduction check (STEP 5), run 2026-10-25 before any revision job, from the repository root with .venv\Scripts\python.exe -W ignore -c "<script>"
+Platform: Windows-11-10.0.26200-SP0 | Python 3.12.14 | xgboost 3.4.1 | code_sha256 e0abd2b465a12f95ca1b8633e57d63fb4aaf4d66e6d788153bba4cee27c9b9d8
+
+default ESOL True
+default FreeSolv True
+default Lipophilicity True
+default BBBP True
+default BACE True
+tuned full/runs/FreeSolv_A_random_s0.json True True
+tuned full/runs/BBBP_B_pso_s3.json True True
+tuned full_ref/runs/ESOL_A_gwo_ref_s5.json True True
+tuned full_ref/runs/BACE_B_woa_ref_s7.json True True
+exit: 0  elapsed: 24 s

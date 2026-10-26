@@ -1,0 +1,6 @@
+dataset,F_npz,F_runs,d_B,mask_hex_bits
+ESOL,188,188,196,188
+FreeSolv,171,171,179,172
+Lipophilicity,207,207,215,208
+BBBP,210,210,218,212
+BACE,193,193,201,196

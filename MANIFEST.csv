@@ -1,0 +1,25 @@
+item,where,inputs,script,outputs,run batch / code hash
+Table 1,Main text,results/xgb_mh/features/summary.json; results/xgb_mh/splits/*.json,xgb_mh/prepare.py,-,prepare
+Tables 2-3,Main text,xgb_mh/space.py; xgb_mh/optimizers/*.py,-,-,full 4669997af4a6 / full_ref f056a88816b3
+Fig. 1,Main text,-,analysis/revision/figures_rev.py,analysis/revision/fig/fig1_workflow.png,revision e0abd2b465a1
+Fig. 2,Main text,analysis/revision/out/exact_runs.csv,analysis/revision/figures_rev.py,analysis/revision/fig/fig2_test_distributions.png,full / full_ref
+Fig. 3,Main text,analysis/revision/out/exact_runs.csv,analysis/revision/figures_rev.py,analysis/revision/fig/fig3_improvement_vs_default.png,full / full_ref
+Fig. 4,Main text,analysis/revision/out/exact_runs.csv,analysis/revision/figures_rev.py,analysis/revision/fig/fig4_validation_vs_test.png,full / full_ref
+Fig. 5,Main text,"exact_runs.csv; results/xgb_mh/{full,full_ref,mirror}/runs; results/revision/searches/*_m-desc_*",analysis/revision/figures_rev.py,analysis/revision/fig/fig5_feature_selection_combined.png,full / full_ref / mirror fc7d77de4416 / revision J3
+Tables S1-S10,Supplementary,"results/xgb_mh/{full,full_ref,mirror}; analysis/final/curation",analysis/final/final_stats.py (analysis code 264415706d21),analysis/final/*.csv; analysis/final/RESULTS.md,full / full_ref / mirror
+Table S2 correction (BBBP Exp. B),Supplementary,"results/xgb_mh/{full,full_ref}/runs/*.json",analysis/revision/exact_recompute.py,analysis/revision/out/exact_friedman.csv,full / full_ref
+Figures S1-S6,Supplementary,results/xgb_mh; analysis/final,analysis/figures/make_figures.py,analysis/figures/out/figS*.png,full / full_ref / mirror
+Table S11,Supplementary,"results/xgb_mh/{full,full_ref}/test_summary.csv",analysis/revision/existing.py,analysis/revision/out/R1_4_pairwise_equivalence.csv,full / full_ref
+Table S12,Supplementary,results/revision/J1,analysis/revision/j1.py,analysis/revision/out/J1_model_seed*.csv,revision J1
+Table S13,Supplementary,results/revision/J6,analysis/revision/j2_j6.py,analysis/revision/out/J6_*.csv,revision J6
+Table S14,Supplementary,results/revision/J1,analysis/revision/j1.py,analysis/revision/out/J1_prerefit_diagnostic.csv,revision J1
+Table S15,Supplementary,data/xgb_mh_call_logs.zip (unzipped),analysis/revision/existing2.py,analysis/revision/out/R2_2_val_ranges.csv,full / full_ref
+Table S16,Supplementary,results/revision/J2,analysis/revision/j2_j6.py,analysis/revision/out/J2_validation_control.csv,revision J2
+Table S17,Supplementary,results/xgb_mh/mirror; results/revision/searches,analysis/revision/existing.py; analysis/revision/j3_j4.py,analysis/revision/out/R1_5_mirror_paired_changes.csv; J3_descriptor_mirror.csv,mirror / revision J3
+Table S18,Supplementary,results/revision/J1/*.npz,analysis/revision/j1.py,analysis/revision/out/J1_prediction_stability.csv,revision J1
+Table S19,Supplementary,results/revision/searches,analysis/revision/j3_j4.py,analysis/revision/out/J4_penalty.csv; J4_mirror_lam0.csv,revision J3/J4
+Table S20,Supplementary,results/revision/searches,analysis/revision/j5.py,analysis/revision/out/J5_budget.csv,revision J3/J4/J5
+Table S21,Supplementary,results/revision/J1; results/xgb_mh/features/*.npz,analysis/revision/j1_parents.py,analysis/revision/out/J1_parents_*.csv,revision J1
+Fig. S7,Supplementary,exact_runs.csv; analysis/revision/out/J1_prerefit_diagnostic.csv,analysis/revision/figures_rev.py,analysis/revision/fig/fig5_spearman_rho.png,full / full_ref / revision J1
+Fig. S8,Supplementary,analysis/revision/out/J2_validation_control.csv,analysis/revision/figures_rev.py,analysis/revision/fig/fig9_validation_control.png,revision J2
+Revision text numbers (Sections 2.7-4.5),Main text,analysis/revision/out/*.csv,analysis/revision/run_all.py,analysis/revision/out,revision e0abd2b465a1

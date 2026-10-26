@@ -1,0 +1,3 @@
+Revision code sha256 after Amendment 1 (revision\__init__.py, core.py, jobs.py, status.py + xgb_mh\**\*.py, computed as jobs.code_hash()): e0abd2b465a12f95ca1b8633e57d63fb4aaf4d66e6d788153bba4cee27c9b9d8
+The pre-registration value fc3d87ff... refers to the code before the Amendment 1 changes. Recorded 2026-10-25T14:56:33Z on Windows-11-10.0.26200, Python 3.12.14, before any revision job was run.
+Exact-reproduction check passed before the runs: 5/5 default configurations and 4/4 published tuned runs identical (refit test score and logged validation score).

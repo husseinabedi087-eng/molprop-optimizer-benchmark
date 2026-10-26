@@ -143,3 +143,35 @@ A Zenodo DOI for the whole repository will be added at the first release.
 ## License
 
 MIT (see `LICENSE`).
+
+## Revision (IJIES review, release v1.1.0)
+
+Six further analyses answer the reviewers. They were fixed in `revision/PREREGISTRATION_REVISION.md` (SHA-256 in
+`revision/PREREGISTRATION_REVISION.sha256`, recorded 2026-10-25 14:10 UTC, before any revision run); `revision/AMENDMENT_1.md`
+moved the runs to the original machine before any result was inspected; `revision/AMENDMENT_1_CODE_HASH.txt` records the
+code hash of the runs (`e0abd2b465a1...`). Equivalence margins were set after the primary results were known.
+
+| Job | Question | Results |
+|---|---|---|
+| J1 | Re-evaluation of the 1,500 selected configurations: pre-refit diagnostic, model-seed control, predictions | `results/revision/J1/` |
+| J2 | Validation control: 200-configuration pool, single split vs 5-fold inner scaffold CV, untouched test | `results/revision/J2/` |
+| J3 | Descriptor-only mirrored encoding (+ standard / full-mirror references) | `results/revision/searches/*_m-desc_*` |
+| J4 | Subset-size penalty 0, 1% and 5% of the default validation metric | `results/revision/searches/*_lam*` |
+| J5 | Budget of 300 calls | `results/revision/searches/*_b300_*` |
+| J6 | Five independent scaffold partitions (Experiment A) | `results/revision/J6/` |
+
+Run (resumable, 10 workers, about 9 h on the study machine): `python -m revision.jobs J1` ... `J6`, progress with
+`python -m revision.status`. On the original Windows machine all 1,500 J1 refits reproduce the published validation and
+test scores exactly. Tuned runs do not reproduce bit for bit on Linux: XGBoost draws row and column subsamples through
+C++ standard-library distributions that differ between compilers (the deterministic default configuration reproduces
+everywhere).
+
+Analyses and figures: `python analysis/revision/run_all.py` (unzip `data/xgb_mh_call_logs.zip` and
+`data/revision_call_logs.zip` first) writes `analysis/revision/out/*.csv` and `analysis/revision/fig/*`.
+`MANIFEST.csv` links every table and figure of the paper and the Supplementary Material to its inputs, script and run
+batch. `python validate_release.py` checks split identities, budgets, search dimensions (179-218), code hashes,
+pre-registration hashes and the J1 reproduction flags in a few seconds, without fitting any model.
+
+Correction: `test_summary.csv` rounds the 16th digit, which broke exact ROC-AUC ties; computed from the exact
+`runs/*.json`, the Friedman statistic for BBBP in Experiment B is 10.96 (p = 0.027) rather than 11.44 (p = 0.022). No
+verdict changes (`analysis/revision/exact_recompute.py`).

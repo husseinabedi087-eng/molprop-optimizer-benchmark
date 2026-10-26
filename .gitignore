@@ -14,6 +14,8 @@ release_assets/
 data/*
 !data/xgb_mh_call_logs.zip
 !data/xgb_mh_call_logs.zip.sha256
+!data/revision_call_logs.zip
+!data/revision_call_logs.zip.sha256
 results/xgb_mh/features/*.npz
 
 # Unpacked per-call logs (tracked as data/xgb_mh_call_logs.zip instead, see README)
@@ -24,3 +26,10 @@ results/xgb_mh/resume_test/
 # Exploratory preview outputs, except the pre-registered mirror evaluation read by analysis/final/final_stats.py
 analysis_preview/output/*
 !analysis_preview/output/mirror_20260928_111045/
+
+# Revision runs: unpacked per-call logs (tracked as data/revision_call_logs.zip), descriptor cache, temp files
+results/revision/calls/
+results/revision/J6_calls/
+results/revision/J6_features/
+results/revision/*.tmp*
+smoke_revision/

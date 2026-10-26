@@ -1,0 +1,6 @@
+dataset,parent_groups_multi,groups_crossing_splits,label_conflict_groups,train_in_conflict,val_excluded,n_val,test_excluded,n_test
+ESOL,13,0,1,2,0,113,0,113
+FreeSolv,3,0,0,0,0,64,0,65
+Lipophilicity,82,0,3,7,0,420,0,420
+BBBP,92,3,15,32,2,204,1,204
+BACE,45,12,18,38,3,151,9,152

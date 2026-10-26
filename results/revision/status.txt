@@ -1,0 +1,8 @@
+J1: 1505/1505 done
+    refit test score identical to the published run: 1500/1500
+    validation score identical to the published log:  1500/1500
+J3: 540/540 done
+J4: 400/400 done
+J5: 100/100 done
+J2: 1005/1005 done
+J6: 320/320 done
